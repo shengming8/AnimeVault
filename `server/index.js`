@@ -1,0 +1,19 @@
+```javascript
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// 模拟使用 MiMo API 生成推荐
+app.get('/api/recommendations/:userId', async (req, res) => {
+  const { userId } = req.params;
+  // 此处将调用 MiMo API 进行个性化推荐
+  res.json({
+    user: userId,
+    recommendations: [],
+    poweredBy: 'MiMo-V2.5-Pro'
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`AnimeVault server running on port ${PORT}`);
+});
